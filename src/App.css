@@ -1,0 +1,78 @@
+* {
+  border: 1px solid black;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.app-title {
+  text-align: center;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+
+  margin: 50px;
+}
+
+.page {
+  width: 700px;
+
+  word-break: break-all;
+  background-color: wheat;
+}
+
+/* Sections */
+
+.section-title {
+  margin: 0;
+  padding: 50px 200px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu {
+  padding: 15px;
+  animation: expand 250ms ease-in-out;
+  transform-origin: top;
+}
+
+@keyframes expand {
+  0% {
+    transform: scaleY(0);
+  }
+
+  70% {
+    transform: scaleY(1.1);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* Page layout */
+
+.personal-info {
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+
+  padding: 0;
+  margin: 0;
+}
+
+.contact p {
+  margin: 0;
+}
