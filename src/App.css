@@ -24,7 +24,6 @@ body {
   width: 700px;
 
   word-break: break-all;
-  background-color: wheat;
 }
 
 /* Sections */
@@ -61,6 +60,8 @@ form {
 
 /* Page layout */
 
+/* Personal Info */
+
 .personal-info {
   text-align: center;
 }
@@ -75,4 +76,9 @@ form {
 
 .contact p {
   margin: 0;
+}
+
+/* Education */
+.education {
+  text-align: center;
 }
