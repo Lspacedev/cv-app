@@ -9,11 +9,11 @@ import "./App.css";
 function App() {
   /* Personal Info Comp State */
   const [personFormData, setPersonFormData] = useState({
-    firstName: "",
-    lastName: "",
-    tel: "",
-    email: "",
-    city: "",
+    firstName: "John",
+    lastName: "Doe",
+    tel: "011 1111 111",
+    email: "johndoe@emai.com",
+    city: "Doeville",
   });
 
   function handlePersonChange(e) {
@@ -24,9 +24,9 @@ function App() {
 
   /* Education Comp State */
   const [eduFormData, setEduFormData] = useState({
-    schoolName: "",
-    studyName: "",
-    dateOf: "",
+    schoolName: "University of Doe",
+    studyName: "Doescience",
+    dateOf: "11/11/2006",
   });
 
   function handleEduChange(e) {
@@ -37,9 +37,9 @@ function App() {
 
   /* Work Comp State */
   const [job1, setJob1] = useState({
-    companyName: "",
-    studyName: "",
-    dateOf: "",
+    companyName: "Doe Industries",
+    position: "Doe Worker",
+    dateOf: "11/11/2020",
   });
 
   function handleWorkChange1(e) {
@@ -49,7 +49,7 @@ function App() {
 
   const [job2, setJob2] = useState({
     companyName: "",
-    studyName: "",
+    position: "",
     dateOf: "",
   });
 
@@ -60,7 +60,7 @@ function App() {
 
   const [job3, setJob3] = useState({
     companyName: "",
-    studyName: "",
+    position: "",
     dateOf: "",
   });
 
@@ -71,7 +71,7 @@ function App() {
 
   return (
     <>
-      <h1 className="app-title">Cv Maker</h1>
+      <h1 className="app-title">CV Maker</h1>
       <div className="container">
         <div className="information">
           <Personal
@@ -100,29 +100,34 @@ function App() {
             ></Job>
           </Work>
         </div>
-        <div className="page">
+        <main className="page">
           <section className="personal-info">
-            <h2>
+            <div className="name">
               {personFormData.firstName === "" && personFormData.lastName === ""
                 ? "Name"
                 : personFormData.firstName + " " + personFormData.lastName}
-            </h2>
+            </div>
             <div className="contact">
               <p>{personFormData.tel}</p>
               <p>{personFormData.email}</p>
               <p>{personFormData.city}</p>
             </div>
           </section>
-
+          <hr />
           <section className="education">
-            <h2>Education</h2>
+            <div className="head">Education</div>
             <div>
+              <h4>School Name: </h4>
               <p>{eduFormData.schoolName}</p>
+              <h4>Study Name: </h4>
               <p>{eduFormData.studyName}</p>
+              <h4>Date of Completion</h4>
               <p>{eduFormData.dateOf}</p>
             </div>
           </section>
+          <hr />
           <section className="work">
+            <div className="head">Work Experience</div>
             <div className="job">
               <h3>{job1.companyName && "Job 1"}</h3>
               <div>
@@ -138,29 +143,52 @@ function App() {
             <div className="job">
               <h3>{job2.companyName && "Job 2"}</h3>
               <div>
-                <h4>Company Name: </h4> <p>{job2.companyName}</p>
+                {job2.companyName && (
+                  <>
+                    <h4>Company Name: </h4> <p>{job2.companyName}</p>
+                  </>
+                )}
               </div>
               <div>
-                <h4>Position: </h4> <p>{job2.position}</p>
+                {job2.companyName && (
+                  <>
+                    <h4>Position: </h4> <p>{job2.position}</p>
+                  </>
+                )}
               </div>
               <div>
-                <h4>Date of Completion: </h4> <p>{job2.dateOf}</p>
+                {job2.companyName && (
+                  <>
+                    <h4>Date of Completion: </h4> <p>{job2.dateOf}</p>
+                  </>
+                )}
               </div>
             </div>
             <div className="job">
-              <h3>{job3.companyName && "Job 3"}</h3>
               <div>
-                <h4>Company Name: </h4> <p>{job3.companyName}</p>
+                {job3.companyName && (
+                  <>
+                    <h4>Company Name: </h4> <p>{job3.companyName}</p>
+                  </>
+                )}
               </div>
               <div>
-                <h4>Position: </h4> <p>{job3.position}</p>
+                {job3.companyName && (
+                  <>
+                    <h4>Position: </h4> <p>{job3.position}</p>
+                  </>
+                )}
               </div>
               <div>
-                <h4>Date of Completion: </h4> <p>{job3.dateOf}</p>
+                {job3.companyName && (
+                  <>
+                    <h4>Date of Completion: </h4> <p>{job3.dateOf}</p>
+                  </>
+                )}
               </div>
             </div>
           </section>
-        </div>
+        </main>
       </div>
     </>
   );

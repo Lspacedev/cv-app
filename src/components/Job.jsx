@@ -16,7 +16,7 @@ function Job({ id, formData, handleWorkChange }) {
   }
 
   return (
-    <div className="job">
+    <div className="jobs">
       <h4 className="job-title" onClick={toggleShow}>
         Job {id}
       </h4>
